@@ -1,0 +1,25 @@
+#ddev-generated
+# Simple template to demonstrate addon-template
+---
+services:
+  arangodb:
+    container_name: "ddev-${DDEV_SITENAME}-arangodb"
+    image: arangodb/arangodb:3.10.2
+    expose:
+      - "8529"
+    environment:
+      - VIRTUAL_HOST=$DDEV_HOSTNAME
+      - HTTP_EXPOSE=8529:8529
+      - ARANGO_NO_AUTH=1
+      - ARANGO_ROOT_PASSWORD="db"
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: ${DDEV_APPROOT}
+    volumes:
+      - arangodb3data:/var/lib/arangodb3
+      - arangodb3apps:/var/lib/arangodb3-apps
+volumes:
+  arangodb3data:
+    name: "${DDEV_SITENAME}-arangodb3data"
+  arangodb3apps:
+    name: "${DDEV_SITENAME}-arangodb3apps"
