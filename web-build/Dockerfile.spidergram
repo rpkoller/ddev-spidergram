@@ -1,0 +1,4 @@
+#ddev-generated
+RUN npm install --global spidergram
+RUN npx playwright install
+RUN npx playwright install-deps
