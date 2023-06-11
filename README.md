@@ -19,17 +19,17 @@ This repository provides an addon to use [@Spidergram](https://github.com/autogr
 mkdir spidergram && cd spidergram
 ```
 
-1. Initialize the DDEV project.
+2. Initialize the DDEV project.
 ```
 ddev config
 ```
 
-1. Download the `ddev-spidergram`-addon.
+3. Download the `ddev-spidergram`-addon.
 ```
 ddev get rpkoller/ddev-spidergram
 ```
 
-1. Start DDEV and wait a few minutes until ArangoDB, Spidergram, and Playwright are downloaded and installed.
+4. Start DDEV and wait a few minutes until ArangoDB, Spidergram, and Playwright are downloaded and installed.
 ```
 ddev start
 ```
@@ -39,7 +39,9 @@ ddev start
 ```
 ddev spidergram status
 ```
+
 The output should look like that:
+
 ```
 $> ddev spidergram status
 
@@ -51,10 +53,14 @@ Status:   online
 URL:      http://spidergram.ddev.site:8529
 Database: db
 ```
-1. Crawl and analyze your first site.
-```ddev spidergram go https://ddev.com```
-1. The ArangoDB backend could be reached via the URL shown for `ddev spidergram status`. You simply have to copy http://spidergram.ddev.site:8529 into your browser.
-1. For more details see the [Spidergram documentation](https://github.com/autogram-is/spidergram/tree/main/docs). All configuration changes are applied to the `spidergram.config.json` file.
+
+2. Crawl and analyze your first site.
+```
+ddev spidergram go https://ddev.com
+```
+
+3. The ArangoDB backend could be reached via the URL shown for `ddev spidergram status`. You simply have to copy http://spidergram.ddev.site:8529 into your browser.
+4. For more details see the [Spidergram documentation](https://github.com/autogram-is/spidergram/tree/main/docs). All configuration changes are applied to the `spidergram.config.json` file.
 
 ## Update
 TODO *I have to wait until a new version is released, to figure out what the best approach might be to update Spidergram and/or any of it's dependencies in the context of a DDEV addon.*
