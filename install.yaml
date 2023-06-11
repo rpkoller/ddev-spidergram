@@ -8,4 +8,4 @@ project_files:
 - commands/web/spidergram
 - web-build/Dockerfile.spidergram
 - docker-compose.arangodb.yaml
-- spidergram.config.json
+- ../spidergram.config.json
