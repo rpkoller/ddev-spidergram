@@ -1,3 +1,4 @@
+nodejs_version: "18"
 hooks:
   post-start:
-    - EXEC: "perl -pi -e 's/spidergram/{{ $DDEV_PROJECT }}/g' ./spidergram.config.json"
+    - exec: perl -pi -e "s/(?<=http:\/\/)(.*)(?=.ddev.site:8529)/$DDEV_PROJECT/g" ./spidergram.config.json
