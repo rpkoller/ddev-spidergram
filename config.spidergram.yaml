@@ -1,3 +1,0 @@
-hooks:
-  post-start:
-    - exec: "mv ./spidergram.config.json ../spidergram.config.json"
