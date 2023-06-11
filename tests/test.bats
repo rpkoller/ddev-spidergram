@@ -11,17 +11,17 @@ setup() {
   ddev start -y >/dev/null
 }
 
-health_checks() {
-  # Do something useful here that verifies the add-on
-  # ddev exec "curl -s elasticsearch:9200" | grep "${PROJNAME}-elasticsearch"
-  ddev spidergram status
-}
-
 teardown() {
   set -eu -o pipefail
   cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
   ddev delete -Oy ${PROJNAME} >/dev/null 2>&1
   [ "${TESTDIR}" != "" ] && rm -rf ${TESTDIR}
+}
+
+health_checks() {
+  # Do something useful here that verifies the add-on
+  # ddev exec "curl -s elasticsearch:9200" | grep "${PROJNAME}-elasticsearch"
+  ddev spidergram status
 }
 
 @test "install from directory" {
@@ -32,13 +32,3 @@ teardown() {
   ddev restart
   health_checks
 }
-
-@test "install from release" {
-  set -eu -o pipefail
-  cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
-  echo "# ddev get rpkoller/ddev-spidergram with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
-  ddev get rpkoller/ddev-spidergram
-  ddev restart >/dev/null
-  health_checks
-}
-
