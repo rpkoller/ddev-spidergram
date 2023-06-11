@@ -9,8 +9,8 @@ project_files:
 - web-build/Dockerfile.spidergram
 - docker-compose.arangodb.yaml
 - spidergram.config.json
+- config.spidergram.yaml
 
 post_install_actions:
 - |
-  awk '{gsub(/spidergram/,"{{ DDEV_PROJECT }}")}1' ./spidergram.config.json > ../spidergram.config.json
-  rm ./spidergram.config.json
+  mv ./spidergram.config.json ../spidergram.config.json

@@ -1,0 +1,3 @@
+hooks:
+  post-start:
+    - EXEC: "perl -pi -e 's/spidergram/{{ $DDEV_PROJECT }}/g' ./spidergram.config.json"
