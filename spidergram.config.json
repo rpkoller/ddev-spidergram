@@ -1,7 +1,7 @@
 {
   "arango": {
     "databaseName": "db",
-    "url": "http://grammer.ddev.site:8529",
+    "url": "http://spidergram.ddev.site:8529",
     "auth": {
       "username": "root",
       "password": "db"

@@ -12,4 +12,5 @@ project_files:
 
 post_install_actions:
 - |
-  mv ./spidergram.config.json ../spidergram.config.json
+  awk '{gsub(/spidergram/,"{{ DDEV_PROJECT }}")}1' ./spidergram.config.json > ../spidergram.config.json
+  rm ./spidergram.config.json
