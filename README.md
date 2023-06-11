@@ -15,16 +15,26 @@ This repository provides an addon to use [@Spidergram](https://github.com/autogr
 
 ## Installation
 1. Create a new directory and go into it. For simplicity reasons I am using the name `spidergram` which equals to the project name. You are able to use any other name here.
-```mkdir spidergram && cd spidergram```
+```
+mkdir spidergram && cd spidergram
+```
 1. Initialize the DDEV project.
-```ddev config```
+```
+ddev config
+```
 1. Download the `ddev-spidergram`-addon.
-```ddev get rpkoller/ddev-spidergram```
+```
+ddev get rpkoller/ddev-spidergram
+```
 1. Start DDEV and wait a few minutes until ArangoDB, Spidergram, and Playwright are downloaded and installed.
-```ddev start```
+```
+ddev start
+```
 ## Basic usage
 1. Run an initial status check that everything is set up correctly.
-```ddev spidergram status```
+```
+ddev spidergram status
+```
 The output should look like that:
 ```
 $> ddev spidergram status
