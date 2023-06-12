@@ -69,7 +69,8 @@ TODO *I have to wait until a new version is released, to figure out what the bes
 1. Adds a docker-compose file (`docker-compose.arangodb.yaml`) for ArangoDB.
 1. Adds a dockerfile (`Dockerfile.spidergram`) to the web-build folder. It runs a `npm install --global spidergram`, `npx playwright install`, and a `npx playwright install-deps` when the addon is installed.
 1. Adds a `spidergram` web command. You only have to call for example `ddev spidergram status` instead of `ddev exec spidergram status`.
-1. Adds a `spidergram.config.json` to the project root. That json with the exact file name is mandatory for Spidergram to run. In a post start hook it is ensured that the project name in the URL that is used inside `spidergram.config.json` is in line with the current project name and automatically changed in case it differs.
+1. Adds a `spidergram.config.json` to the project root. The json with the exact file name is mandatory for Spidergram to run. In a `post-start`-hook
+it is ensured that the URL set in the config.json is in line with the overall project settings. The project name based on $DDEV_PROJECT and the TLD based on $DDEV_TLD gets replaced in the URL by a regex.
 1. The `config.spidergram.yaml` file ensures that the Node version is set to version 18.
 
 **Contributed and maintained by [@rpkoller](https://github.com/rpkoller) based on the original [ddev-addon-template](https://github.com/ddev/ddev-addon-template)**
