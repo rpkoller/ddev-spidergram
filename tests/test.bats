@@ -18,10 +18,9 @@ teardown() {
   [ "${TESTDIR}" != "" ] && rm -rf ${TESTDIR}
 }
 
-health_checks() {
-  # Do something useful here that verifies the add-on
-  # ddev exec "curl -s elasticsearch:9200" | grep "${PROJNAME}-elasticsearch"
-  ddev spidergram status
+arangodb_online_check() {
+  # Checks if the ArangoDB is online. The requires that spidergram.config.json is in place and the the URL how to reach the database is correctly set.
+  ddev spidergram status | grep "Status:   online"
 }
 
 @test "install from directory" {
@@ -30,5 +29,5 @@ health_checks() {
   echo "# ddev get ${DIR} with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
   ddev get ${DIR}
   ddev restart
-  health_checks
+  arangodb_online_check
 }
