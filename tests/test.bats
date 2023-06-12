@@ -18,7 +18,7 @@ teardown() {
   [ "${TESTDIR}" != "" ] && rm -rf ${TESTDIR}
 }
 
-arangodb_online_check() {
+is_arangodb_online() {
   # Checks if the ArangoDB is online. The requires that spidergram.config.json is in place and the the URL how to reach the database is correctly set.
   ddev spidergram status | grep "Status:   online"
 }
@@ -29,5 +29,5 @@ arangodb_online_check() {
   echo "# ddev get ${DIR} with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
   ddev get ${DIR}
   ddev restart
-  arangodb_online_check
+  is_arangodb_online
 }
