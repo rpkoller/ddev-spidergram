@@ -1,4 +1,4 @@
 nodejs_version: "18"
 hooks:
   post-start:
-    - exec: perl -pi -e "s/(https?:\/\/).*\d{4}/\1$DDEV_PROJECT.$DDEV_TLD:8529/g" ./spidergram.config.json
+    - exec: perl -pi -e "s/(url: https?:\/\/).*\d{4}/\1$DDEV_PROJECT.$DDEV_TLD:8529/g" ./spidergram.config.yaml

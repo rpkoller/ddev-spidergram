@@ -1,3 +1,4 @@
+---
 name: ddev-spidergram
 
 # list of files and directories listed that are copied into project .ddev directory
@@ -8,9 +9,9 @@ project_files:
 - commands/web/spidergram
 - web-build/Dockerfile.spidergram
 - docker-compose.arangodb.yaml
-- spidergram.config.json
+- spidergram.config.yaml
 - config.spidergram.yaml
 
 post_install_actions:
 - |
-  mv ./spidergram.config.json ../spidergram.config.json
+  mv ./spidergram.config.yaml ../spidergram.config.yaml
