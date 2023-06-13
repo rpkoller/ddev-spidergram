@@ -15,6 +15,8 @@ This repository provides an addon to use [@Spidergram](https://github.com/autogr
 > While it can be used to crawl any website, we (the folks at [Autogram](https://autogram.is/)) designed it specifically for "ten websites in a trench coat" scenarios where a web property encompasses multiple CMSs, multiple domains, and multiple design systems, maintained by multiple teams.
 
 ## Installation
+0. Make sure [Docker](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/) and [DDEV](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/) are installed.
+
 1. Create a new directory and go into it. For simplicity reasons I am using the name `spidergram` for this guide. You are able to use any other name here.
 ```
 mkdir spidergram && cd spidergram
@@ -73,7 +75,7 @@ it is ensured that the URL set in the config.json is in line with the overall pr
 
 ## TODO
 - [ ] Figure out the best approach how to upgrade Spidergram and it's dependencies for an already existing Spidergram DDEV instance and update the README accordingly (_I have to wait for the next Spidergram release being able to test that_).
-- [ ] Expand the number of settings in the `spidergram.config.yaml`. At the moment I've only using the default values found at https://github.com/autogram-is/create-spidergram/tree/main/templates
+- [ ] Expand the number of available settings in the `spidergram.config.yaml`. At the moment I am only using the default values from an old template found at https://github.com/autogram-is/create-spidergram/tree/main/templates.
 
 ## Contributing
 Any feedback in regard to bugs and potential improvements is welcome.
