@@ -6,4 +6,4 @@
 ## Example: "arangorestore --all-databases true --compress-output true --output-directory /var/www/html/arangodump6"
 ## ExecRaw: true
 
-arangorestore --all-databases true --input-directory /var/www/html/arango-backup/
+arangorestore --all-databases true --input-directory /var/www/html/.ddev/arango-backup/

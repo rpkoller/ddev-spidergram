@@ -7,7 +7,6 @@ name: ddev-spidergram
 # DDEV environment variables can be interpolated into these filenames
 project_files:
 - commands/arangodb/arangorestore
-- commands/arangodb/arangoexport
 - commands/web/spidergram
 - web-build/Dockerfile.spidergram
 - docker-compose.arangodb.yaml
@@ -16,8 +15,8 @@ project_files:
 
 post_install_actions:
 - mv ./spidergram.config.yaml ../spidergram.config.yaml
-- mkdir arango-backup
-- mkdir arango-export
+- mkdir ./arango-backup
+- mkdir ../arango-export
 
 removal_action:
-- arangodump --all-databases true --output-directory /var/www/html/arango-backup/
+- arangodump --all-databases true --output-directory /var/www/html/.ddev/arango-backup/
