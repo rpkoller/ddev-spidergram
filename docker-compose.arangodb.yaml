@@ -1,5 +1,4 @@
 #ddev-generated
-# Addon for ArangoDB 3.10.2
 ---
 services:
   arangodb:
@@ -14,6 +13,8 @@ services:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: ${DDEV_APPROOT}
     volumes:
+      - ".:/mnt/ddev_config"
+      - "..:/var/www/html"
       - arangodb3data:/var/lib/arangodb3
       - arangodb3apps:/var/lib/arangodb3-apps
 volumes:
