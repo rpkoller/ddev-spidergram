@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#ddev-generated
+## Description: Run arangoexport inside the arangodb container
+## Usage: arangoexport [flags] [args]
+## Example: "arangoexport --all-databases true --compress-output true --output-directory /var/www/html/arangodump6"
+## ExecRaw: true
+
+arangoexport --output-directory /var/www/html/arango-export "$@"
