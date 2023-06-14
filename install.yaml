@@ -15,10 +15,9 @@ project_files:
 - config.ddev-spidergram.yaml
 
 post_install_actions:
-- |
-  mv ./spidergram.config.yaml ../spidergram.config.yaml
-  mkdir arango-backup
-  mkdir arango-export
+- mv ./spidergram.config.yaml ../spidergram.config.yaml
+- mkdir arango-backup
+- mkdir arango-export
 
 removal_action:
 - arangodump --all-databases true --output-directory /var/www/html/arango-backup/
