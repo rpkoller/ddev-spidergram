@@ -71,7 +71,7 @@ ddev spidergram go https://ddev.com
 1. The ArangoDB web interface could be reached via the web browser. Simply add `:8529` to the project's url (`spidergram.ddev.site:8529`) then you reach:
 ![ArangoDB web interface](images/arangodb_web_interface.jpg)
 2. You have to click `_SYSTEM` in the upper right corner of the screen. In the select form on the next screen you have to click `_system` again and then choose the option `db` and confirm.
-![Select the active database in ArangoDB](images/arangodb_web_interface.jpg)
+![Select the active database in ArangoDB](images/arangodb_db_select.jpg)
 
 ## Backup and restore ArangoDB
 1. To backup your ArangoDB and delete your project:
