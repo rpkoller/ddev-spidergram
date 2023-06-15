@@ -17,3 +17,6 @@ project_files:
 post_install_actions:
 - mv ./spidergram.config.yaml ../spidergram.config.yaml
 - mkdir -p ./arango-backup
+
+removal_action:
+- rm -r commands/arangodb
