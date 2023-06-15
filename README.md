@@ -33,7 +33,7 @@ ddev config --auto
 
 In case you are running DDEV on MacOS it is highly recommended to enter this additional configuration. On Linux
 
-````
+```
 ddev config --mutagen-enabled=true
 ```
 
