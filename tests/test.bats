@@ -37,6 +37,7 @@ restore_arangodb() {
   ddev get ${DIR}
   ddev restart
   is_arangodb_online
+  chmod -R ugo+rw ./.ddev/arango-backup
   create_arangodb_dump
   restore_arangodb
 }
