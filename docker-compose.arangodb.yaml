@@ -4,6 +4,7 @@ services:
   arangodb:
     container_name: "ddev-${DDEV_SITENAME}-arangodb"
     image: arangodb/arangodb:3.10.2
+    user: ${DDEV_UID}:${DDEV_GID}
     environment:
       - VIRTUAL_HOST=$DDEV_HOSTNAME
       - HTTP_EXPOSE=8529:8529
