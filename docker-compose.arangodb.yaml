@@ -20,6 +20,8 @@ services:
       - arangodb3apps:/var/lib/arangodb3-apps
 volumes:
   arangodb3data:
+    external: true
     name: "${DDEV_SITENAME}-arangodb3data"
   arangodb3apps:
+    external: true
     name: "${DDEV_SITENAME}-arangodb3apps"
