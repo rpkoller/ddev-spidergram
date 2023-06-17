@@ -4,7 +4,7 @@ services:
   arangodb:
     container_name: "ddev-${DDEV_SITENAME}-arangodb"
     image: arangodb/arangodb:3.10.2
-    user: ${DDEV_UID}:${DDEV_GID}
+    command: sh -c 'chmod -R ugo+w /var/lib/arangodb3 /var/lib/arangodb3-apps && arangod '
     environment:
       - VIRTUAL_HOST=$DDEV_HOSTNAME
       - HTTP_EXPOSE=8529:8529
@@ -20,8 +20,6 @@ services:
       - arangodb3apps:/var/lib/arangodb3-apps
 volumes:
   arangodb3data:
-    external: true
     name: "${DDEV_SITENAME}-arangodb3data"
   arangodb3apps:
-    external: true
     name: "${DDEV_SITENAME}-arangodb3apps"
