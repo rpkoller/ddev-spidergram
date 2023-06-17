@@ -3,6 +3,6 @@
 nodejs_version: "18"
 hooks:
   pre-start:
-    - exec-host: docker run -it --rm -v ${DDEV_PROJECT}-arangodb3apps:/var/arr1 -v ${DDEV_PROJECT}-arangodb3data:/var/arr2 busybox chmod -R ugo+w /var/arr1 /var/arr2
+    - exec-host: docker run -it --rm -v ddev-${DDEV_PROJECT}_arangodb3apps:/var/arr1 -v ddev-${DDEV_PROJECT}_arangodb3data:/var/arr2 busybox chmod -R ugo+w /var/arr1 /var/arr2
   post-start:
     - exec: perl -pi -e "s/(url?:\ https?:\/\/).*\d{4}/\1$DDEV_PROJECT.$DDEV_TLD:8529/g" ./spidergram.config.yaml
