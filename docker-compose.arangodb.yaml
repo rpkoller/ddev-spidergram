@@ -3,8 +3,10 @@
 services:
   arangodb:
     container_name: "ddev-${DDEV_SITENAME}-arangodb"
-    image: arangodb/arangodb:3.10.2
-    user: ${DDEV_UID}:${DDEV_GID}
+    build:
+      context: './arangodb-build'
+      args:
+        BASE_IMAGE: arangodb/arangodb:3.10.2
     environment:
       - VIRTUAL_HOST=$DDEV_HOSTNAME
       - HTTP_EXPOSE=8529:8529
@@ -16,12 +18,19 @@ services:
     volumes:
       - ".:/mnt/ddev_config"
       - "..:/var/www/html"
-      - arangodb3data:/var/lib/arangodb3
-      - arangodb3apps:/var/lib/arangodb3-apps
+      - type: "volume"
+        source: "arangodb3data"
+        target: "/var/lib/arangodb3"
+        volume:
+          nocopy: true
+      - type: "volume"
+        source: "arangodb3apps"
+        target: "/var/lib/arangodb3-apps"
+        volume:
+          nocopy: true
+
 volumes:
   arangodb3data:
-    external: true
-    name: "${DDEV_SITENAME}-arangodb3data"
+    name: "ddev-${DDEV_SITENAME}_arangodb3data"
   arangodb3apps:
-    external: true
-    name: "${DDEV_SITENAME}-arangodb3apps"
+    name: "ddev-${DDEV_SITENAME}_arangodb3apps"
