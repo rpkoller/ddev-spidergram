@@ -103,7 +103,7 @@ ddev arangodump
 ddev delete spidergram --omit-snapshot
 ```
 
-The database is saved in `.ddev/arango-backup`. After the successful dump `ddev delete spidergram --omit-snapshot` deletes the project's containers, images and volumes. The project files as well as the DDEV config files in `.ddev` remain untouched. That saves disk space and enables you to re-add the project at a later point as described in the second step.
+The database is saved in `.ddev/arangodb-backup`. After the successful dump `ddev delete spidergram --omit-snapshot` deletes the project's containers, images and volumes. The project files as well as the DDEV config files in `.ddev` remain untouched. That saves disk space and enables you to re-add the project at a later point as described in the second step.
 
 2. To restore your project:
 
@@ -124,9 +124,9 @@ That way you re-register the existing project in DDEV, start it up and restore t
 1. Adds a `spidergram` web command. For example you only have to type `ddev spidergram status` instead of `ddev exec spidergram status`.
 1. Adds a `spidergram.config.yaml` to the project root. The Yaml file with that exact file name is mandatory for Spidergram to run.
 1. The `config.ddev-spidergram.yaml` file ensures that Node.js is set to version 18. In a `post-start`-hook it is also taken care that the URL set in `spidergram.config.yaml` is in line with the overall project settings. The project name, based on `$DDEV_PROJECT`, and the TLD, based on `$DDEV_TLD`, is getting replaced by a regex statement on every start. That way, if the project name or the TLD changes at a later point, Spidergram still just keeps working.
-1. Adds a `arangodump` web command. The database dump is written to a fixed destination `.ddev/arango-backup/`. Currently `arangodump`is intended to be used to backup the database before a project is getting removed from DDEV.
-1. Adds a `arangorestore` web command. Make sure that your folder with the database backup is available at `.ddev/arango-backup/` within your project folder before you run `ddev config && ddev start`.
-1. The `.ddev/arango-backup/` directory is created with the `-p` option in a `post_install_action` and a `.gitignore` file is being added to the directory excluding everything within.
+1. Adds a `arangodump` web command. The database dump is written to a fixed destination `.ddev/arangodb-backup/`. Currently `arangodump`is intended to be used to backup the database before a project is getting removed from DDEV.
+1. Adds a `arangorestore` web command. Make sure that your folder with the database backup is available at `.ddev/arangodb-backup/` within your project folder before you run `ddev config && ddev start`.
+1. The `.ddev/arangodb-backup/` directory is created with the `-p` option in a `post_install_action` and a `.gitignore` file is being added to the directory excluding everything within.
 
 
 ## TODO

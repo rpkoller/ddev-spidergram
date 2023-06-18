@@ -16,8 +16,8 @@ project_files:
 
 post_install_actions:
 - mv ./spidergram.config.yaml ../spidergram.config.yaml
-- mkdir -p ./arango-backup
-- echo '**/**' > ./arango-backup/.gitignore
+- mkdir -p ./arangodb-backup
+- echo '**/**' > ./arangodb-backup/.gitignore
 
 removal_action:
 - rm -r ./commands/arangodb

@@ -6,4 +6,4 @@
 ## Example: "arangodump --all-databases true --compress-output true --output-directory /var/www/html/arangodump6"
 ## ExecRaw: true
 
-arangodump --all-databases true --server.authentication false --overwrite true --output-directory /var/www/html/.ddev/arango-backup/ "$@"
+arangodump --all-databases true --server.authentication false --overwrite true --output-directory /var/www/html/.ddev/arangodb-backup/ "$@"
