@@ -2,10 +2,5 @@
 ---
 nodejs_version: "18"
 hooks:
-  pre-start:
-    - exec-host: version=$(grep -Eo '[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,2}' .ddev/docker-compose.arangodb.yaml) && curl "https://raw.githubusercontent.com/arangodb/arangodb-docker/official/alpine/$version/docker-entrypoint.sh" > ".ddev/arangodb-build/docker-entrypoint.sh"
-    - exec-host: |
-                sed -i '' '/# be writable by the user under which we run the container./ a\
-                chmod -R ugo+w /var/lib/arangodb3 /var/lib/arangodb3-apps' .ddev/arangodb-build/docker-entrypoint.sh
   post-start:
     - exec: perl -pi -e "s/(url?:\ https?:\/\/).*\d{4}/\1$DDEV_PROJECT.$DDEV_TLD:8529/g" ./spidergram.config.yaml
