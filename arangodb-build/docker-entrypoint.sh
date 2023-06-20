@@ -1,4 +1,5 @@
 #!/bin/sh
+#ddev-generated
 set -e
 
 if [ -z "$ARANGO_INIT_PORT" ] ; then
