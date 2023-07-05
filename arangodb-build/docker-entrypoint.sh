@@ -37,7 +37,7 @@ fi
 if [ "$1" = 'arangod' ]; then
     # /var/lib/arangodb3 and /var/lib/arangodb3-apps must exist and
     # be writable by the user under which we run the container.
-    sudo chmod -R ugo+w /var/lib/arangodb3 /var/lib/arangodb3-apps
+    chmod -R ugo+w /var/lib/arangodb3 /var/lib/arangodb3-apps
     # Make a copy of the configuration file to patch it, note that this
     # must work regardless under which user we run:
     cp /etc/arangodb3/arangod.conf /tmp/arangod.conf
