@@ -11,7 +11,3 @@ project_files:
 - docker-compose.arangodb.yaml
 - spidergram.config.yaml
 - config.ddev-spidergram.yaml
-
-post_install_actions:
-- |
-  mv ./spidergram.config.yaml ../spidergram.config.yaml
