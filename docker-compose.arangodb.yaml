@@ -14,16 +14,8 @@ services:
     volumes:
       - ".:/mnt/ddev_config"
       - "..:/var/www/html"
-      - type: "volume"
-        source: "arangodb3data"
-        target: "/var/lib/arangodb3"
-        volume:
-          nocopy: true
-      - type: "volume"
-        source: "arangodb3apps"
-        target: "/var/lib/arangodb3-apps"
-        volume:
-          nocopy: true
+      - arangodb3data:/var/lib/arangodb3
+      - arangodb3apps:/var/lib/arangodb3-apps
 
 volumes:
   arangodb3data:
