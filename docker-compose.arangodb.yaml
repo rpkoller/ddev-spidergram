@@ -3,15 +3,11 @@
 services:
   arangodb:
     container_name: "ddev-${DDEV_SITENAME}-arangodb"
-    build:
-      context: './arangodb-build'
-      args:
-        BASE_IMAGE: arangodb/arangodb:3.10.2
+    image: arangodb/arangodb:3.10.2
     environment:
       - VIRTUAL_HOST=$DDEV_HOSTNAME
       - HTTP_EXPOSE=8529:8529
       - ARANGO_NO_AUTH=1
-      - ARANGO_ROOT_PASSWORD="db"
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: ${DDEV_APPROOT}
@@ -31,6 +27,6 @@ services:
 
 volumes:
   arangodb3data:
-    name: "ddev-${DDEV_SITENAME}_arangodb3data"
+    name: "${DDEV_SITENAME}_arangodb3data"
   arangodb3apps:
-    name: "ddev-${DDEV_SITENAME}_arangodb3apps"
+    name: "${DDEV_SITENAME}_arangodb3apps"

@@ -6,8 +6,6 @@ name: ddev-spidergram
 # if it hasn't been modified by the user.
 # DDEV environment variables can be interpolated into these filenames
 project_files:
-- arangodb-build/Dockerfile
-- arangodb-build/docker-entrypoint.sh
 - commands/arangodb/arangodump
 - commands/arangodb/arangorestore
 - commands/web/spidergram
