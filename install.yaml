@@ -10,9 +10,9 @@ project_files:
 - commands/arangodb/arangorestore
 - commands/web/spidergram
 - web-build/Dockerfile.spidergram
+- config.ddev-spidergram.yaml
 - docker-compose.arangodb.yaml
 - spidergram.config.yaml
-- config.ddev-spidergram.yaml
 
 post_install_actions:
 - mv ./spidergram.config.yaml ../spidergram.config.yaml
