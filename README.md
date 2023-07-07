@@ -103,7 +103,7 @@ ddev arangodump
 ddev delete spidergram --omit-snapshot
 ```
 
-The database is saved in `.ddev/arangodb-backup`. After the successful dump `ddev delete spidergram --omit-snapshot` deletes the project's containers, images and volumes. The project files as well as the DDEV config files in `.ddev` remain untouched. That saves disk space and enables you to re-add the project at a later point as described in the second step.
+The database is saved in `.ddev/arangodb-backup`. After the successful dump `ddev delete spidergram --omit-snapshot` deletes the project's containers, images and volumes. The project files as well as the DDEV config files in `.ddev`, including the ArangoDB database dump, remain untouched. That saves disk space and enables you to re-add the project at a later point as described in the second step.
 
 2. To restore your project:
 
