@@ -6,4 +6,4 @@
 ## Example: "arangorestore --all-databases true --input-directory /var/www/html/arangodump6"
 ## ExecRaw: true
 
-arangorestore --all-databases true --server.authentication false --input-directory /var/www/html/.ddev/arangodb-backup/
+arangorestore --all-databases true --server.authentication false --create-database true --input-directory /var/www/html/.ddev/arangodb-backup/
