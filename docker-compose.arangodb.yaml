@@ -4,9 +4,12 @@ services:
   arangodb:
     container_name: "ddev-${DDEV_SITENAME}-arangodb"
     image: arangodb/arangodb:3.10.2
+    expose:
+      - "8529"
     environment:
       - VIRTUAL_HOST=$DDEV_HOSTNAME
-      - HTTP_EXPOSE=8529:8529
+      - HTTP_EXPOSE=8528:8529
+      - HTTPS_EXPOSE=8529:8529
       - ARANGO_NO_AUTH=1
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
