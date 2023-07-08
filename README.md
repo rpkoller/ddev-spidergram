@@ -20,10 +20,10 @@ This repository provides an addon to use [@Spidergram](https://github.com/autogr
 ## Installation
 0. Make sure [Docker](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/) and [DDEV](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/) are installed.
 
-1. Create a new directory and move into it. For simplicity reasons I am using the name `spidergram` across this readme. You are able to choose any other name here instead.
+1. Create a new directory and move into it. For simplicity reasons I am using the name `spidercrawl` across this readme. You are able to choose any other name here instead.
 
 ```
-mkdir spidergram && cd spidergram
+mkdir spidercrawl && cd spidercrawl
 ```
 
 2. Initialize your DDEV project. By using the defaults the project name will be equal to the directory name.
@@ -71,7 +71,7 @@ Config file: /var/www/html/spidergram.config.yaml
 
 ARANGODB
 Status:   online
-URL:      http://spidergram.ddev.site:8529
+URL:      https://spidercrawl.ddev.site:8529
 Database: db
 ```
 
@@ -86,7 +86,7 @@ ddev spidergram go https://ddev.com
 
 ## How to access ArangoDB
 
-1. The ArangoDB web interface could be reached in the web browser via the the URL shown for `ddev spidergram status`. The port `:8529` is appended to the project's URL (`spidergram.ddev.site:8529`).
+1. The ArangoDB web interface could be reached in the web browser via the the URL shown for `ddev spidergram status`. The port `:8529` is appended to the project's URL (`https://spidercrawl.ddev.site:8529`).
 
 ![ArangoDB web interface](images/arangodb_web_interface.jpg)
 
