@@ -20,7 +20,14 @@ teardown() {
 
 is_arangodb_online() {
   # Checks if the ArangoDB is online. The requires that spidergram.config.json is in place and the the URL how to reach the database is correctly set.
-  ddev spidergram status | grep "Status:   online"
+  ddev spidergram status | grep "Status: *online"
+}
+create_arangodb_dump() {
+  ddev arangodump | grep "{dump} Writing dump to output directory"
+}
+
+restore_arangodb() {
+  ddev arangorestore | grep "{restore} Restoring database 'db'"
 }
 
 @test "install from directory" {
@@ -30,4 +37,6 @@ is_arangodb_online() {
   ddev get ${DIR}
   ddev restart
   is_arangodb_online
+  create_arangodb_dump
+  restore_arangodb
 }

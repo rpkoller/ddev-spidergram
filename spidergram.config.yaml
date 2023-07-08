@@ -5,10 +5,7 @@
 # you're done kicking the tires.
 arango:
   databaseName: db
-  url: http://spidergram.ddev.site:8529
-  auth:
-    username: root
-    password: db
+  url: https://spidergram.ddev.site:8529
 
 # These options control the behavior of the Spider when it's actually
 # crawling pages and searching them for new links. In a simple config

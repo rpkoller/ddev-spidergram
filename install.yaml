@@ -6,12 +6,18 @@ name: ddev-spidergram
 # if it hasn't been modified by the user.
 # DDEV environment variables can be interpolated into these filenames
 project_files:
+- commands/arangodb/arangodump
+- commands/arangodb/arangorestore
 - commands/web/spidergram
 - web-build/Dockerfile.spidergram
+- config.ddev-spidergram.yaml
 - docker-compose.arangodb.yaml
 - spidergram.config.yaml
-- config.ddev-spidergram.yaml
 
 post_install_actions:
-- |
-  mv ./spidergram.config.yaml ../spidergram.config.yaml
+- mv ./spidergram.config.yaml ../spidergram.config.yaml
+- mkdir -p ./arangodb-backup
+- echo '**/**' > ./arangodb-backup/.gitignore
+
+removal_action:
+- rm -r ./commands/arangodb

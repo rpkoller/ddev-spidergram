@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#ddev-generated
+## Description: Run arangodump inside the arangodb container
+## Usage: arangodump [flags] [args]
+## Example: "arangodump --all-databases true --compress-output true --output-directory /var/www/html/arangodump6"
+## ExecRaw: true
+
+arangodump --all-databases true --server.authentication false --overwrite true --output-directory /var/www/html/.ddev/arangodb-backup/ && chmod -R ugo+w /var/www/html/.ddev/arangodb-backup/

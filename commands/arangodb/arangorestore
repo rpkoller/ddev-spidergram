@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#ddev-generated
+## Description: Run arangorestore inside the arangodb container
+## Usage: arangorestore [flags] [args]
+## Example: "arangorestore --all-databases true --input-directory /var/www/html/arangodump6"
+## ExecRaw: true
+
+arangorestore --all-databases true --server.authentication false --create-database true --input-directory /var/www/html/.ddev/arangodb-backup/
