@@ -22,19 +22,19 @@ This repository provides an addon to use [@Spidergram](https://github.com/autogr
 
 1. Create a new directory and move into it. For simplicity reasons I am using the name `spidercrawl` across this readme. You are able to choose any other name here instead.
 
-```
+```sh
 mkdir spidercrawl && cd spidercrawl
 ```
 
 2. Initialize your DDEV project. By using the defaults the project name will be equal to the directory name.
 
-```
+```sh
 ddev config --auto
 ```
 
 In case you are running DDEV on MacOS or Windows it is highly recommended to enable [Mutagen](https://ddev.readthedocs.io/en/stable/users/install/performance/#mutagen) with the following additional configuration step.
 
-```
+```sh
 ddev config --mutagen-enabled=true
 ```
 
@@ -43,13 +43,21 @@ On Linux, Windows, WSL2 and Gitpod that step is not necessary.
 
 3. Download the `ddev-spidergram`-addon.
 
+For DDEV v1.23.5 or above run
+
+```sh
+ddev add-on get rpkoller/ddev-spidergram
 ```
+
+For earlier versions of DDEV run
+
+```sh
 ddev get rpkoller/ddev-spidergram
 ```
 
 4. Start DDEV and wait a few minutes until the DDEV and ArangoDB images, Spidergram, as well as Playwright are downloaded and installed.
 
-```
+```sh
 ddev start
 ```
 
@@ -57,13 +65,13 @@ ddev start
 ## Basic usage
 1. Run an initial status check that everything is set up correctly.
 
-```
+```sh
 ddev spidergram status
 ```
 
 The resulting output should look like that:
 
-```
+```text
 $> ddev spidergram status
 
 SPIDERGRAM CONFIG
@@ -77,7 +85,7 @@ Database: db
 
 2. Crawl and analyze your first site.
 
-```
+```sh
 ddev spidergram go https://ddev.com
 ```
 
@@ -98,7 +106,7 @@ ddev spidergram go https://ddev.com
 ## Backup and restore ArangoDB
 1. To backup your ArangoDB database and delete your project:
 
-```
+```sh
 ddev arangodump
 ddev delete spidergram --omit-snapshot
 ```
@@ -107,7 +115,7 @@ The database is saved in `.ddev/arangodb-backup`. After the successful dump `dde
 
 2. To restore your project:
 
-```
+```sh
 ddev config
 ddev start
 ddev arangorestore
