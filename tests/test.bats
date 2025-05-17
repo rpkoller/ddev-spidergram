@@ -1,3 +1,5 @@
+#!/usr/bin/env bats
+
 setup() {
   set -eu -o pipefail
   export DIR="$( cd "$( dirname "$BATS_TEST_FILENAME" )" >/dev/null 2>&1 && pwd )/.."

@@ -1,4 +1,7 @@
-[![tests](https://github.com/rpkoller/ddev-spidergram/actions/workflows/tests.yml/badge.svg)](https://github.com/rpkoller/ddev-spidergram/actions/workflows/tests.yml) ![project is maintained](https://img.shields.io/maintenance/yes/2024.svg)
+[![add-on registry](https://img.shields.io/badge/DDEV-Add--on_Registry-blue)](https://addons.ddev.com)
+[![tests](https://github.com/rpkoller/ddev-spidergram/actions/workflows/tests.yml/badge.svg)](https://github.com/rpkoller/ddev-spidergram/actions/workflows/tests.yml) 
+[![last commit](https://img.shields.io/github/last-commit/rpkoller/ddev-spidergram)](https://github.com/rpkoller/ddev-spidergram/commits)
+[![release](https://img.shields.io/github/v/release/rpkoller/ddev-spidergram)](https://github.com/rpkoller/ddev-spidergram/releases/latest)
 
 # ddev-spidergram <!-- omit in toc -->
 
@@ -32,19 +35,10 @@ mkdir spidercrawl && cd spidercrawl
 ddev config --auto
 ```
 
-In case you are running DDEV on MacOS or Windows it is highly recommended to enable [Mutagen](https://ddev.readthedocs.io/en/stable/users/install/performance/#mutagen) with the following additional configuration step.
-
-```
-ddev config --mutagen-enabled=true
-```
-
-On Linux, Windows, WSL2 and Gitpod that step is not necessary.
-
-
 3. Download the `ddev-spidergram`-addon.
 
 ```
-ddev get rpkoller/ddev-spidergram
+ddev add-on get rpkoller/ddev-spidergram
 ```
 
 4. Start DDEV and wait a few minutes until the DDEV and ArangoDB images, Spidergram, as well as Playwright are downloaded and installed.

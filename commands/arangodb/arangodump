@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 #ddev-generated
 ## Description: Run arangodump inside the arangodb container

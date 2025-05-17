@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 #ddev-generated
 ## Description: Run arangorestore inside the arangodb container
